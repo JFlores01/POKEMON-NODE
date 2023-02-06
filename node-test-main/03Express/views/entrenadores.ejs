@@ -1,0 +1,36 @@
+<%- include("template/cabecera.ejs", {tituloWeb:'Panel de Administración'}) %>
+
+  <div class="container">
+    <h1>CRUD Mongo</h1>
+    <a class="btn btn-success btn-block my-4" href="/entrenadores/crearEntrenador">Crear un nuevo entrenador</a>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Medallas</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayEntrenadores.length> 0) { %>
+                    <!--Haremos el foreach para recorrer el array-->
+                    <% arrayEntrenadores.forEach(entrenadores => { %>
+                        <tr>
+                            <th scope="row"><%= entrenadores.id %></th>
+                            <td><%= entrenadores.Nombre %></td>
+                            <td><%= entrenadores.Medallas %></td>
+                            <td><%= entrenadores.Descripcion %></td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="/entrenadores/<%= entrenadores.id %>">Editar/Eliminar</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+          </tbody>
+        </table>
+    </div>
+
+
+<%- include("template/footer.ejs") %>

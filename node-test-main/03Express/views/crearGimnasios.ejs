@@ -1,0 +1,13 @@
+<%- include("template/cabecera", {tituloWeb: 'Nuevo Gimnasio' }) %>
+    <div class="container">
+        <h1>Crear nuevo Gimnasio</h1>
+        <form action="/gimnasios" class="my-2" method="POST">
+            <input type="text" placeholder="Nombre Gimnasio" class="form-control my-2" name="Nombre">
+            <input type="text" placeholder="Ciudad" class="form-control my-2" name="Ciudad">
+            <input type="text" placeholder="Lider" class="form-control my-2" name="Lider">
+            <button type="submit" class="btn btn-dark btn-block">
+                Agregar
+            </button>
+        </form>
+    </div>
+<%- include("template/footer") %>
